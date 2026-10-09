@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Payments Manager — roadmap de desenvolvimento, métricas e acompanhamento da homologação do sistema PSDTE.">
+
+    <meta name="theme-color" content="#001e40">
+
+    <title>Payments Manager | Roadmap do Produto</title>
+
+    <!-- Fontes e ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap"
+        rel="stylesheet">
+
+    <!-- Design system -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVEGAÇÃO MOBILE -->
+    <header class="mobile-navbar">
+        <button type="button" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sideNav">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+
+        <div class="mobile-brand">
+            <img class="sosdocs-logo mobile-logo" src="https://www.sosdocs.com.br/brand/sosdocs-logo.png" alt="SOS Docs">
+            <strong>Payments Manager</strong>
+        </div>
+
+        <button type="button" id="exportBtn" aria-label="Imprimir ou salvar PDF" title="Imprimir ou salvar PDF">
+            <span class="material-symbols-outlined">print</span>
+        </button>
+    </header>
+
+    <div id="mobileNavOverlay" class="hidden"></div>
+
+    <div class="app-shell">
+
+        <!-- MENU LATERAL -->
+        <aside id="sideNav" aria-label="Navegação principal">
+
+            <div>
+                <div class="sidebar-brands">
+                    <img class="sosdocs-logo" src="https://www.sosdocs.com.br/brand/sosdocs-logo.png" alt="SOS Docs">
+                    <img class="smartdocs-logo" src="smartdocs-logo.svg" alt="SmartDocs">
+                </div>
+                <div class="sidebar-product-name">Payments Manager</div>
+                <div class="brand-caption">ROADMAP DO PRODUTO</div>
+            </div>
+
+            <div class="sidebar-intro">
+                Plano de desenvolvimento, releases e prontidão operacional do sistema PSDTE.
+            </div>
+
+            <nav aria-label="Seções do projeto">
+                <p class="px-5 pt-3 pb-2 text-xs font-bold uppercase tracking-widest text-slate-500">
+                    Projeto
+                </p>
+
+                <ul>
+                    <li>
+                        <a href="#visao-geral" data-tab="visao-geral"
+                            class="nav-item-ativo flex items-center gap-3 px-4 py-3" aria-current="page">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <span>Visão geral</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#roadmap" data-tab="roadmap"
+                            class="nav-item-inativo flex items-center gap-3 px-4 py-3">
+                            <span class="material-symbols-outlined">view_kanban</span>
+                            <span>Roadmap de sprints</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#metricas" data-tab="metricas"
+                            class="nav-item-inativo flex items-center gap-3 px-4 py-3">
+                            <span class="material-symbols-outlined">monitoring</span>
+                            <span>Métricas e capacidade</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <p class="px-5 pt-6 pb-2 text-xs font-bold uppercase tracking-widest text-slate-500">
+                    Homologação
+                </p>
+
+                <ul>
+                    <li>
+                        <a href="#regulatorio" data-tab="regulatorio"
+                            class="nav-item-inativo flex items-center gap-3 px-4 py-3">
+                            <span class="material-symbols-outlined">account_balance</span>
+                            <span>Homologação regulatória</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#seguranca" data-tab="seguranca"
+                            class="nav-item-inativo flex items-center gap-3 px-4 py-3">
+                            <span class="material-symbols-outlined">shield</span>
+                            <span>Segurança e operação</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#documentacao" data-tab="documentacao"
+                            class="nav-item-inativo flex items-center gap-3 px-4 py-3">
+                            <span class="material-symbols-outlined">description</span>
+                            <span>Documentação, contratos e jurídico</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#basa" data-tab="basa" class="nav-item-inativo flex items-center gap-3 px-4 py-3">
+                            <span class="material-symbols-outlined">handshake</span>
+                            <span>BASA e prontidão</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <strong>Payments Manager</strong>
+                Roadmap do produto<br>
+                SOS Docs / SmartDocs
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main id="main-content">
+
+            <!-- ==========================================
+           ABA 1 — VISÃO GERAL
+           ========================================== -->
+            <section id="visao-geral" class="tab-panel">
+
+                <div class="main-toolbar">
+                    <div class="breadcrumb">
+                        Projeto / <strong>Visão geral</strong>
+                    </div>
+
+                    <button type="button" id="exportBtnDesktop" class="btn-exportar" onclick="window.print()">
+                        <span class="material-symbols-outlined">picture_as_pdf</span>
+                        Exportar / imprimir
+                    </button>
+                </div>
+
+                <header class="hero-roadmap">
+
+                    <div class="hero-brand-panel">
+                        <div class="hero-brands">
+                            <img class="sosdocs-logo" src="https://www.sosdocs.com.br/brand/sosdocs-logo.png" alt="SOS Docs">
+                            <span class="brand-divider" aria-hidden="true"></span>
+                            <img class="smartdocs-logo" src="smartdocs-logo.svg" alt="SmartDocs">
+                        </div>
+
+                        <p>
+                            Plataforma de gestão de pagarés eletrônicos, carteiras de crédito
+                            e pagamentos integrada ao SmartDocs.
+                        </p>
+
+                        <div class="hero-stats-grid">
+
+                            <div class="hero-stat">
+                                <span class="material-symbols-outlined">groups</span>
+                                <span>Equipe prevista</span>
+                                <strong>4 devs</strong>
+                                <span>Com Claude Code</span>
+                            </div>
+
+                            <div class="hero-stat">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                                <span>Cadência</span>
+                                <strong>2 semanas</strong>
+                                <span>1 release por sprint</span>
+                            </div>
+
+                            <div class="hero-stat">
+                                <span class="material-symbols-outlined">schedule</span>
+                                <span>Duração prevista</span>
+                                <strong>22 semanas</strong>
+                                <span>11 sprints</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="hero-content-panel">
+                        <div class="eyebrow">Roadmap do produto</div>
+                        <h1>Payments Manager</h1>
+                        <h2>Plano de sprints e releases</h2>
+
+                        <p>
+                            Visão integrada do desenvolvimento, das entregas planejadas
+                            e das atividades necessárias à homologação e entrada em produção.
+                        </p>
+                    </div>
+
+                </header>
+
+                <div class="phase-bar">
+                    <article class="phase">
+                        <strong>F0 + MVP — Fundação e entrada em produção no BASA</strong>
+                        <span>R1 a R9 · 9 sprints · 18 semanas · 141 histórias · 770 SP</span>
+                    </article>
+
+                    <article class="phase secondary">
+                        <strong>F2 — Após a entrada em produção</strong>
+                        <span>R10 a R11 · 2 sprints · 4 semanas · 26 histórias · 154 SP</span>
+                    </article>
+                </div>
+
+                <div class="summary-grid">
+
+                    <article class="summary-card">
+                        <span class="material-symbols-outlined">description</span>
+                        <strong>167</strong>
+                        <span>Total de histórias planejadas</span>
+                    </article>
+
+                    <article class="summary-card">
+                        <span class="material-symbols-outlined">bar_chart</span>
+                        <strong>924 SP</strong>
+                        <span>Story points do projeto</span>
+                    </article>
+
+                    <article class="summary-card">
+                        <span class="material-symbols-outlined">view_kanban</span>
+                        <strong>11</strong>
+                        <span>Sprints planejadas</span>
+                    </article>
+
+                    <article class="summary-card">
+                        <span class="material-symbols-outlined">calendar_month</span>
+                        <strong>22 semanas</strong>
+                        <span>Duração prevista do roadmap</span>
+                    </article>
+
+                </div>
+
+                <section class="content-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Distribuição das fases</h2>
+                            <p>Planejamento consolidado de desenvolvimento.</p>
+                        </div>
+                        <span class="material-symbols-outlined">analytics</span>
+                    </div>
+
+                    <div id="phase-bars"></div>
+                </section>
+
+                <section class="content-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Premissas do projeto</h2>
+                            <p>Condições consideradas para o planejamento das releases.</p>
+                        </div>
+                        <span class="material-symbols-outlined">fact_check</span>
+                    </div>
+
+                    <ul id="assumption-list"></ul>
+                </section>
+
+                <section class="content-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Atividades fora do desenvolvimento</h2>
+                            <p>Frentes paralelas que precisam de responsáveis e acompanhamento.</p>
+                        </div>
+                        <button type="button" class="btn-ver-detalhes" data-go="regulatorio">
+                            Ver homologação
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <p>
+                        As atividades regulatórias, documentais, de segurança, operação,
+                        contratos, jurídico e BASA não são somadas aos story points do backlog.
+                        Elas precisam avançar em paralelo ao desenvolvimento.
+                    </p>
+                </section>
+
+            </section>
+
+            <!-- ==========================================
+           ABA 2 — ROADMAP DE SPRINTS
+           ========================================== -->
+            <section id="roadmap" class="tab-panel hidden">
+
+                <header class="page-heading">
+                    <div class="eyebrow">Planejamento de desenvolvimento</div>
+                    <h1>Roadmap de sprints</h1>
+                    <p>
+                        Visão completa das releases R1 a R11, com objetivos, entregas,
+                        histórias e story points planejados.
+                    </p>
+                </header>
+
+                <div class="phase-bar">
+                    <article class="phase">
+                        <strong>F0 + MVP</strong>
+                        <span>R1–R9 · 9 sprints · 141 histórias · 770 SP</span>
+                    </article>
+
+                    <article class="phase secondary">
+                        <strong>F2</strong>
+                        <span>R10–R11 · 2 sprints · 26 histórias · 154 SP</span>
+                    </article>
+                </div>
+
+                <div class="filter-bar">
+                    <label for="sprintFilter">Fase</label>
+
+                    <select id="sprintFilter">
+                        <option value="all">Todas as fases</option>
+                        <option value="mvp">F0 + MVP</option>
+                        <option value="f2">F2</option>
+                    </select>
+
+                    <label for="sprintSearch">Pesquisar</label>
+
+                    <input type="search" id="sprintSearch" placeholder="Buscar sprint, entrega ou objetivo...">
+                </div>
+
+                <div id="all-sprints" class="roadmap"></div>
+
+            </section>
+
+            <!-- ==========================================
+           ABA 3 — MÉTRICAS
+           ========================================== -->
+            <section id="metricas" class="tab-panel hidden">
+
+                <header class="page-heading">
+                    <div class="eyebrow">Indicadores de planejamento</div>
+                    <h1>Métricas e capacidade</h1>
+                    <p>
+                        Consolidação do esforço, volume de histórias, releases e duração
+                        prevista do roadmap.
+                    </p>
+                </header>
+
+                <div id="metric-cards"></div>
+
+                <section class="content-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Esforço por fase</h2>
+                            <p>Comparação entre F0 + MVP e F2.</p>
+                        </div>
+                        <span class="material-symbols-outlined">monitoring</span>
+                    </div>
+
+                    <div id="metrics-phase-bars"></div>
+                </section>
+
+                <section class="content-panel">
+                    <div class="section-heading"><div><h2>Distribuição e evolução planejada</h2><p>Valores estimados por release, derivados do roadmap.</p></div></div>
+                    <div id="sprint-charts" class="sprint-charts"></div>
+                </section>
+
+                <section class="content-panel">
+                    <h2>Premissas de capacidade</h2>
+                    <p>
+                        Time previsto de quatro desenvolvedores com Claude Code,
+                        sprints de duas semanas, uma release por sprint e F2 iniciando
+                        após o encerramento do MVP.
+                    </p>
+                    <p>
+                        Os indicadores representam o planejamento, não o progresso real
+                        de execução. O site não presume sprints concluídas.
+                    </p>
+                </section>
+
+            </section>
+
+            <!-- ==========================================
+           ABA 4 — REGULATÓRIO
+           ========================================== -->
+            <section id="regulatorio" class="tab-panel hidden">
+
+                <header class="page-heading">
+                    <div class="eyebrow">Homologação · seção 1 do PDF</div>
+                    <h1>Homologação regulatória</h1>
+                    <p>
+                        Processo regulatório com o MIC/DGCE, habilitação da SOSDocs como
+                        PSDTE e requisitos de conformidade.
+                    </p>
+                </header>
+
+                <div class="homologacao-intro">
+                    <strong>Atividades fora do backlog de desenvolvimento</strong>
+                    <p>
+                        Os responsáveis e prazos são sugestões do documento de homologação.
+                        O andamento regulatório deve ser acompanhado em paralelo às releases.
+                    </p>
+                </div>
+
+                <div class="filter-bar">
+                    <label for="homologacaoFilter">Categoria</label>
+                    <select id="homologacaoFilter">
+                        <option value="all">Todas as categorias</option>
+                        <option value="Regulatório">Regulatório</option>
+                        <option value="Documentação">Documentação</option>
+                        <option value="Segurança">Segurança</option>
+                        <option value="Operação">Operação</option>
+                        <option value="Contratos e compras">Contratos e compras</option>
+                        <option value="Jurídico">Jurídico</option>
+                        <option value="BASA e prontidão">BASA e prontidão</option>
+                        <option value="Trabalho humano no backlog">Trabalho humano no backlog</option>
+                    </select>
+
+                    <label for="homologacaoSearch">Pesquisar</label>
+                    <input id="homologacaoSearch" type="search"
+                        placeholder="Buscar atividade, responsável, prazo ou referência...">
+                </div>
+
+                <p id="homologacao-count" class="results-count"></p>
+
+                <div id="homologacao-list"></div>
+
+                <p class="source-note">
+                    Referência: Payments Manager — Homologação: o que fica fora do
+                    desenvolvimento, versão 1, 08/10/2026.
+                </p>
+
+            </section>
+
+            <!-- ==========================================
+           ABA 5 — SEGURANÇA E OPERAÇÃO
+           ========================================== -->
+            <section id="seguranca" class="tab-panel hidden">
+
+                <header class="page-heading">
+                    <div class="eyebrow">Homologação · seções 3 e 4 do PDF</div>
+                    <h1>Segurança e operação</h1>
+                    <p>
+                        Atividades de segurança executadas por terceiros ou por processo
+                        e rotinas operacionais necessárias antes e depois da produção.
+                    </p>
+                </header>
+
+                <div class="homologacao-intro">
+                    <strong>Escopo</strong>
+                    <p>
+                        Inclui pentest externo, custódia da chave do selo, segurança de pessoas,
+                        simulações de incidentes, revisão de controles, restauração, failover
+                        e relatórios do provedor de nuvem.
+                    </p>
+                </div>
+
+                <div class="filter-bar">
+                    <label for="segurancaSearch">Pesquisar</label>
+                    <input id="segurancaSearch" type="search"
+                        placeholder="Buscar atividade de segurança ou operação...">
+                </div>
+
+                <div id="seguranca-list"></div>
+
+            </section>
+
+            <!-- ==========================================
+           ABA 6 — DOCUMENTAÇÃO, CONTRATOS E JURÍDICO
+           ========================================== -->
+            <section id="documentacao" class="tab-panel hidden">
+
+                <header class="page-heading">
+                    <div class="eyebrow">Homologação · seções 2, 5 e 6 do PDF</div>
+                    <h1>Documentação, contratos e jurídico</h1>
+                    <p>
+                        Documentos operativos, contratações de fornecedores, obrigações
+                        contratuais, pareceres e fontes normativas.
+                    </p>
+                </header>
+
+                <div class="homologacao-intro">
+                    <strong>Responsabilidade humana</strong>
+                    <p>
+                        O sistema pode registrar e versionar documentos, mas a elaboração
+                        da DPS, das políticas e dos procedimentos é trabalho de Compliance
+                        e Jurídico, conforme o PDF.
+                    </p>
+                </div>
+
+                <div class="filter-bar">
+                    <label for="documentacaoSearch">Pesquisar</label>
+                    <input id="documentacaoSearch" type="search"
+                        placeholder="Buscar documento, contrato ou obrigação...">
+                </div>
+
+                <div id="documentacao-list"></div>
+
+            </section>
+
+            <!-- ==========================================
+           ABA 7 — BASA E PRONTIDÃO
+           ========================================== -->
+            <section id="basa" class="tab-panel hidden">
+
+                <header class="page-heading">
+                    <div class="eyebrow">Homologação · seções 7 e 8 do PDF</div>
+                    <h1>BASA e prontidão para produção</h1>
+                    <p>
+                        Dependências do banco, homologação funcional UAT e atividades
+                        humanas que complementam as histórias do backlog.
+                    </p>
+                </header>
+
+                <div class="homologacao-intro">
+                    <strong>Marco importante</strong>
+                    <p>
+                        O documento prevê aviso do BASA à Superintendência com pelo menos
+                        30 dias úteis de antecedência da produção e homologação funcional
+                        UAT depois da R9, com 1 a 2 sprints de estabilização.
+                    </p>
+                </div>
+
+                <div class="filter-bar">
+                    <label for="basaSearch">Pesquisar</label>
+                    <input id="basaSearch" type="search" placeholder="Buscar atividade do BASA ou prontidão...">
+                </div>
+
+                <div id="basa-list"></div>
+
+
+
+            </section>
+
+            <footer class="app-footer">
+                Payments Manager · Roadmap do Produto · SOS Docs / SmartDocs
+            </footer>
+
+        </main>
+    </div>
+
+
+</body>
+
+</html>

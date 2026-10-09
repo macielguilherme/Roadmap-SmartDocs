@@ -106,8 +106,8 @@ h1,h2,h3,h4 { line-height:1.2; }
 
 .filter-bar { display:grid; grid-template-columns:auto minmax(170px,.8fr) auto minmax(220px,1.4fr); align-items:center; gap:10px; margin:16px 0; padding:13px; border:1px solid var(--line); border-radius:11px; background:#fff; }
 .filter-bar label { color:#40566b; font-size:12px; font-weight:700; }
-.filter-bar input,.filter-bar select,.homologacao-status-select,.homologacao-notes { min-width:0; min-height:40px; padding:8px 10px; border:1px solid #cbd7e1; border-radius:8px; background:#fff; color:var(--ink); }
-.filter-bar input:focus,.filter-bar select:focus,.homologacao-status-select:focus,.homologacao-notes:focus { border-color:var(--blue-bright); outline:3px solid rgb(22 133 193 / 12%); }
+.filter-bar input,.filter-bar select { min-width:0; min-height:40px; padding:8px 10px; border:1px solid #cbd7e1; border-radius:8px; background:#fff; color:var(--ink); }
+.filter-bar input:focus,.filter-bar select:focus { border-color:var(--blue-bright); outline:3px solid rgb(22 133 193 / 12%); }
 .homologacao-intro { margin:0 0 18px; padding:15px 17px; border:1px solid #c7e2ed; border-left:4px solid var(--blue-bright); border-radius:10px; color:#35566e; background:var(--soft-blue); font-size:12px; }
 .homologacao-intro strong { color:var(--navy); }
 .homologacao-intro p { margin:4px 0 0; }
@@ -165,9 +165,7 @@ h1,h2,h3,h4 { line-height:1.2; }
 .homologacao-meta span,.homologacao-meta strong { display:block; }
 .homologacao-meta span { color:var(--muted); font-size:9px; }
 .homologacao-meta strong { margin-top:3px; color:#263f58; font-size:11px; font-weight:600; }
-.homologacao-card-footer { display:grid; grid-template-columns:auto minmax(150px,220px); align-items:center; gap:8px 10px; padding-top:11px; border-top:1px solid var(--line); }
-.homologacao-card-footer label { color:#40566b; font-size:11px; font-weight:700; }
-.homologacao-card-footer .homologacao-notes { grid-column:1/-1; width:100%; min-height:60px; resize:vertical; }
+
 
 .btn-exportar,.btn-ver-detalhes { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:40px; padding:9px 13px; border:0; border-radius:9px; color:#fff; background:var(--blue); font-size:12px; font-weight:700; cursor:pointer; transition:background .15s ease,transform .15s ease; }
 .btn-exportar:hover,.btn-ver-detalhes:hover { background:var(--navy); }
@@ -209,7 +207,6 @@ h1,h2,h3,h4 { line-height:1.2; }
   .hero-stat { display:grid; grid-template-columns:28px 1fr; align-items:center; column-gap:8px; }
   .hero-stat .material-symbols-outlined { grid-row:span 3; }
   .hero-stat span:not(.material-symbols-outlined) { margin:0; }
-  .homologacao-card-footer { grid-template-columns:1fr; }
   .plan-chart-bars { height:150px; gap:3px; }
 }
 @media print {
@@ -228,3 +225,151 @@ h1,h2,h3,h4 { line-height:1.2; }
 .source-pair span { color:var(--muted); font-size:9px; }
 .source-pair strong { margin-top:3px; color:#263f58; font-size:11px; font-weight:600; }
 @media(max-width:600px) { .source-pair { grid-template-columns:1fr; } }
+
+/* Ajuste de espaçamento, navegação lateral e marcas */
+:root {
+  --sidebar: 284px;
+  --content-gutter: clamp(22px, 3vw, 48px);
+}
+
+#sideNav {
+  padding: 28px 18px 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+}
+
+#sideNav > div:first-child {
+  padding: 0 2px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sidebar-brands {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 8px;
+  border: 1px solid #e5edf3;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.sidebar-brands .sosdocs-logo { width: 112px; max-height: 42px; }
+.sidebar-brands .smartdocs-logo { width: 100px; max-height: 48px; }
+.sidebar-brand-divider { width: 1px; height: 34px; flex: 0 0 1px; background: #cfdae3; }
+.sidebar-product-name { margin: 16px 8px 0; font-size: 18px; }
+.brand-caption { margin: 4px 8px 0; font-size: 9px; }
+#sideNav nav { padding-top: 8px; }
+#sideNav nav > p { margin: 22px 10px 10px; }
+#sideNav ul { gap: 6px; }
+#sideNav [data-tab] { min-height: 49px; gap: 13px; padding: 11px 13px; border-radius: 10px; line-height: 1.35; }
+#sideNav [data-tab] .material-symbols-outlined { flex-basis: 23px; }
+.sidebar-bottom { margin: 18px 4px 0; padding: 16px 8px 4px; line-height: 1.55; }
+
+#main-content { padding: 30px var(--content-gutter) 38px; }
+.tab-panel { max-width: 1480px; }
+.main-toolbar { margin-bottom: 22px; }
+.page-heading { margin-bottom: 28px; }
+.page-heading p { line-height: 1.65; }
+.hero-roadmap { grid-template-columns:minmax(0, 1fr) minmax(0, 1.12fr); gap: 0; margin-bottom: 24px; }
+.hero-brand-panel { padding: clamp(24px, 2.6vw, 36px); }
+.hero-brands { justify-content: flex-start; gap: 15px; min-height: 82px; }
+.hero-brands .sosdocs-logo { width: 132px; max-height: 48px; }
+.hero-brands .smartdocs-logo { width: 134px; max-height: 54px; }
+.brand-divider { height: 42px; flex: 0 0 1px; }
+.hero-brand-panel > p { margin-top: 20px; line-height: 1.6; }
+.hero-content-panel { padding: clamp(26px, 3.2vw, 44px); }
+.hero-stats-grid { gap: 12px; margin-top: 24px; }
+.hero-stat { padding: 13px; }
+.phase-bar { gap: 12px; margin: 22px 0 24px; }
+.phase { padding: 17px 21px; }
+.summary-grid { gap: 15px; margin: 22px 0 27px; }
+.summary-card { padding: 19px; }
+.content-panel { margin-bottom: 22px; padding: 24px; }
+.section-heading { margin-bottom: 19px; }
+.filter-bar { gap: 12px; margin: 18px 0; padding: 16px; }
+.roadmap { gap: 16px; }
+.sprint-card { padding: 18px; }
+.sprint-deliverables { gap: 8px; line-height: 1.55; }
+#metric-cards { gap: 15px; margin-bottom: 22px; }
+.metric-card,.phase-bar-card,.plan-chart,.homologacao-card { padding: 19px; }
+#homologacao-list { gap: 14px; }
+.homologacao-meta { gap: 11px; margin: 15px 0; }
+.homologacao-meta > div,.source-pair > div { padding: 11px; }
+.source-pair { gap: 11px; margin: 14px 0; }
+.app-footer { margin-top: 34px; padding: 19px 0 6px; }
+
+@media (max-width: 1180px) {
+  :root { --sidebar: 250px; }
+  #sideNav { padding-inline: 14px; }
+  .sidebar-brands { gap: 9px; }
+  .sidebar-brands .sosdocs-logo { width: 100px; }
+  .sidebar-brands .smartdocs-logo { width: 90px; }
+  #main-content { padding-inline: 24px; }
+  .filter-bar { grid-template-columns:auto minmax(140px, .8fr) auto minmax(170px, 1.2fr); }
+}
+
+@media (max-width: 900px) {
+  .hero-roadmap { grid-template-columns: 1fr; }
+  .hero-brands { justify-content: center; }
+  .hero-brand-panel { padding: 26px; }
+  .hero-stats-grid { max-width: 760px; }
+  .summary-grid,#metric-cards { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .filter-bar { grid-template-columns:auto minmax(0,1fr); }
+  .roadmap { gap: 13px; }
+}
+
+@media (max-width: 767px) {
+  #sideNav { padding: 24px 16px 16px; }
+  .sidebar-brands { min-height: 70px; gap: 12px; }
+  .sidebar-brands .sosdocs-logo { width: 108px; }
+  .sidebar-brands .smartdocs-logo { width: 96px; }
+  #main-content { padding: 20px 16px 32px; }
+  .main-toolbar { margin-bottom: 18px; }
+  .page-heading { margin-bottom: 22px; }
+  .hero-brand-panel,.hero-content-panel { padding: 22px; }
+  .hero-brands { gap: 13px; min-height: 70px; }
+  .hero-brands .sosdocs-logo { width: min(38vw, 132px); }
+  .hero-brands .smartdocs-logo { width: min(38vw, 134px); }
+  .brand-divider { height: 36px; }
+  .hero-stats-grid { gap: 8px; margin-top: 19px; }
+  .hero-stat { padding: 10px; }
+  .phase-bar { gap: 9px; margin: 17px 0 19px; }
+  .summary-grid,#metric-cards { gap: 10px; }
+  .summary-card { padding: 14px; }
+  .content-panel { margin-bottom: 16px; padding: 18px; }
+  .filter-bar { gap: 7px; padding: 13px; }
+  .roadmap { gap: 11px; }
+  .sprint-card { padding: 14px; }
+  .metric-card,.phase-bar-card,.plan-chart,.homologacao-card { padding: 15px; }
+}
+
+@media (max-width: 480px) {
+  .mobile-navbar { gap: 6px; padding-inline: 9px; }
+  .mobile-brand { gap: 6px; font-size: 11px; }
+  .mobile-logo { width: 65px; }
+  #main-content { padding-inline: 12px; }
+  .hero-brand-panel,.hero-content-panel { padding: 18px; }
+  .hero-brands { gap: 9px; }
+  .hero-brands .sosdocs-logo,.hero-brands .smartdocs-logo { width: min(37vw, 120px); }
+  .hero-stats-grid { grid-template-columns: 1fr; }
+  .hero-stat { display:grid; grid-template-columns:26px 1fr; align-items:center; column-gap:8px; }
+  .hero-stat .material-symbols-outlined { grid-row:span 3; }
+  .summary-grid,#metric-cards,.roadmap { grid-template-columns: 1fr; }
+  .filter-bar { grid-template-columns:1fr; }
+  .section-heading { gap:9px; }
+  .plan-chart-bars { gap:3px; }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .hero-brands { gap: 10px; }
+  .hero-brands .sosdocs-logo { width: 112px; }
+  .hero-brands .smartdocs-logo { width: 116px; }
+}
+
+#sideNav .sidebar-intro {
+  padding: 14px 9px 18px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
